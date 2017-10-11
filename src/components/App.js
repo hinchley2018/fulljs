@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import ContestPreview from './ContestPreview';
 
 
@@ -15,15 +14,6 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    //ajax ...
-    axios.get('/api/contests')
-      .then(res => {
-        //console.log(res);
-        this.setState({
-          contests: res.data.contests
-        });
-      })
-      .catch(console.error);
 
   }
 
