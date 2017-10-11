@@ -1,5 +1,8 @@
 node_modules/
+
+#generated files
 public/bundle.js
+public/style.css
 
 .idea/
 
