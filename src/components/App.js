@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ContestList from './ContestList';
-
+import PropTypes from 'prop-types';
 
 
 //assets
@@ -27,3 +27,7 @@ export default class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    initialContests: PropTypes.Object.Array
+};
