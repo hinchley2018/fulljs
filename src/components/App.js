@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-import ContestPreview from './ContestPreview';
+import ContestList from './ContestList';
+
 
 
 //assets
 //import '../styles/App.css';
 export default class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      pageHeader: 'Naming Contests',
-      contests: this.props.initialContests
-    };
-  }
+    constructor(props){
+        super(props);
+        this.state = {
+            pageHeader: 'Naming Contests',
+            contests: this.props.initialContests
+        };
+    }
 
-  componentDidMount() {
+    componentDidMount() {
 
-  }
+    }
 
-  render() {
-    return (
-      <div>
-        <h2>{this.state.pageHeader}</h2>
-        {this.state.contests.map(contest =>
-          <ContestPreview key={contest.id} {...contest}/>
-        )}
-
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <h2>{this.state.pageHeader}</h2>
+                <ContestList contests={this.state.contests}/>
+            </div>
+        );
+    }
 }

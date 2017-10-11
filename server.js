@@ -9,21 +9,21 @@ import express from 'express';
 const server = express();
 
 server.use(sassMiddleware({
-  src: path.join(__dirname,'sass'),
-  dest: path.join(__dirname, 'public')
+    src: path.join(__dirname,'sass'),
+    dest: path.join(__dirname, 'public')
 }));
 
 server.set('view engine', 'ejs');
 
 server.get('/',(req, res) => {
-  serverRender()
-    .then(({initialMarkup, initialData})=> {
-      res.render('index',{
-        initialMarkup,
-        initialData
-      });
-    })
-    .catch();
+    serverRender()
+        .then(({initialMarkup, initialData})=> {
+            res.render('index',{
+                initialMarkup,
+                initialData
+            });
+        })
+        .catch();
 
 });
 
@@ -33,5 +33,5 @@ server.use(express.static('public'));
 
 
 server.listen(config.port, config.host, ()=>{
-  console.info('Expresss listening on port ',config.port);
+    console.info('Expresss listening on port ',config.port);
 });
