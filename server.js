@@ -1,5 +1,6 @@
 import config from './config';
 import apiRouter from './api';
+import serverRender from './serverRender';
 
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
@@ -15,9 +16,14 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 server.get('/',(req, res) => {
-  res.render('index',{
-    content: '...'
-  });
+  serverRender()
+    .then(content => {
+      res.render('index',{
+        content
+      });
+    })
+    .catch();
+
 });
 
 //use is adds this to middleware
