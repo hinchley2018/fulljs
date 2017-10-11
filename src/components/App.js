@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import ContestPreview from './ContestPreview';
-import data from '../testData';
+
+
 //assets
 //import '../styles/App.css';
 export default class App extends Component {
@@ -12,10 +13,18 @@ export default class App extends Component {
       contests: []
     };
   }
+
   componentDidMount() {
-    this.setState({
-      contests: data.contests
-    });
+    //ajax ...
+    axios.get('/api/contests')
+      .then(res => {
+        console.log(res);
+        this.setState({
+          contests: res.data.contests
+        });
+      })
+      .catch(console.error);
+
   }
 
   render() {
