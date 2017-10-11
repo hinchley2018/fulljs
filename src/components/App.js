@@ -10,7 +10,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       pageHeader: 'Naming Contests',
-      contests: []
+      contests: this.props.initialContests
     };
   }
 
@@ -18,7 +18,7 @@ export default class App extends Component {
     //ajax ...
     axios.get('/api/contests')
       .then(res => {
-        console.log(res);
+        //console.log(res);
         this.setState({
           contests: res.data.contests
         });
