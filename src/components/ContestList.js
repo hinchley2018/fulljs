@@ -12,7 +12,7 @@ const ContestList = ({contests}) => {
 };
 
 ContestList.propTypes={
-    contests: PropTypes.Object.Array
+    contests: PropTypes.Array
 };
 
 export default ContestList;

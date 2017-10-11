@@ -29,5 +29,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-    initialContests: PropTypes.Object.Array
+    initialContests: PropTypes.Array
 };
