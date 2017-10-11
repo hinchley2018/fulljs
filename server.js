@@ -1,16 +1,22 @@
-import config from './config'
+import config from './config';
+import apiRouter from './api';
 
 import express from 'express';
 const server = express();
 
+server.set('view engine', 'ejs');
+
 server.get('/',(req, res) => {
-  res.send('Hello from Express');
+  res.render('index',{
+    content: '...'
+  });
 });
 
-server.get('/about.html',(req, res) => {
-  res.send('Playing with fulljs, this isn\'t dangerous at all');
-});
+//use is adds this to middleware
+server.use('/api',apiRouter);
+server.use(express.static('public'));
 
-server.listen(config.port, ()=>{
+
+server.listen(config.port, config.host, ()=>{
   console.info('Expresss listening on port ',config.port);
 });
