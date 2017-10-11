@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class ContestPreview extends Component{
     render(){
         return (
-            <div className="ContestPreview" onClick={this.handleClick}>
+            <div className="link ContestPreview" onClick={this.handleClick}>
                 <div className="category-name">
                     {this.props.categoryName}
                 </div>
@@ -16,7 +16,7 @@ export default class ContestPreview extends Component{
     }
 
     handleClick() {
-
+        //TODO: what should I do?
     }
 }
 
